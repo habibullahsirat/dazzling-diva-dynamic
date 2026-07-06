@@ -459,7 +459,8 @@ export default function LandingPage() {
             While stocks last. Ends when the timer runs out.
           </p>
         </div>
-
+      </section>
+      <section>
         {/* Flash deal products */}
         <div className="grid w-full max-w-[1312px] grid-cols-2 gap-3 sm:grid-cols-4">
           {FLASH_DEAL_PRODUCTS.map((p) => (
