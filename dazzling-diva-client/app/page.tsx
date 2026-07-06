@@ -406,7 +406,7 @@ export default function LandingPage() {
         className="relative flex flex-col items-center gap-10 overflow-hidden bg-[#5A0C3D] bg-cover bg-center px-4 py-16 sm:px-8 md:px-16"
         style={{
           backgroundImage:
-            "linear-gradient(270deg, rgba(90,12,61,0.85) 0%, #5A0C3D 100%), url(/images/fd1.jpg)",
+            "linear-gradient(270deg, rgba(90,12,61,0) 0%, rgba(90,12,61, 1) 100%), url(/images/fd1.jpg)",
         }}
       >
         <div className="flex flex-col items-center gap-6 text-center">
