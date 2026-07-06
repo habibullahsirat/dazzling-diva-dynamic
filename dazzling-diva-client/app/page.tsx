@@ -505,12 +505,12 @@ export default function LandingPage() {
           {
             label: "Everyday Wear",
             heading: "Comfort Meets Style",
-            img: "/images/fs8_2.jpg",
+            img: "/images/fs8_2.png",
           },
           {
             label: "Festive Edit",
             heading: "Celebrate In Colour",
-            img: "/images/fs8_12.jpg",
+            img: "/images/fs8_12.png",
           },
         ].map((col) => (
           <div
