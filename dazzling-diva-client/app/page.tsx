@@ -698,90 +698,123 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <div>
+        <img src="/images/section_divider.png" alt="" />
+      </div>
+
       {/* ---------------------------------------------------------------
           FOOTER
       --------------------------------------------------------------- */}
       <footer className="w-full">
-        <div className="flex flex-col items-center gap-10 bg-[#5A0C3D] px-4 py-12 sm:px-12 md:gap-12 md:px-32">
-          <div className="flex max-w-[504px] flex-col items-center gap-3 text-center">
-            <span className="text-2xl font-bold text-white">PRO SHOP</span>
-            <p className="text-[16px] capitalize leading-[23px] text-white sm:text-[18px]">
-              Bringing you thoughtfully made clothing, from everyday basics to
-              festive statement pieces.
-            </p>
-          </div>
+        <div className="relative overflow-hidden bg-[#5A0C3D]">
+          {/* Background Image */}
+          <img
+            src="/images/source_fs8_hero.png"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover opacity-65"
+          />
 
-          <div className="flex w-full max-w-[1184px] flex-col flex-wrap items-start justify-between gap-10 sm:flex-row">
-            <div className="flex flex-col items-start gap-5">
-              <div className="flex items-center gap-2.5 text-[14px] text-white">
-                <MapPin className="h-[18px] w-[18px]" strokeWidth={1.2} />
-                <span>House 12, Road 5, Dhaka, Bangladesh</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-[14px] text-white">
-                <Mail className="h-[18px] w-[18px]" strokeWidth={1.2} />
-                <span>hello@proshop.com</span>
-                <Copy className="h-[15px] w-[15px]" strokeWidth={1.2} />
-              </div>
-              <div className="text-[18px] font-bold tracking-wider text-white">
-                +880 1234 567890
-              </div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-[#5A0C3D]/90" />
+
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center gap-10 px-4 py-12 sm:px-12 md:gap-12 md:px-32">
+            <div className="flex max-w-[504px] flex-col items-center gap-3 text-center">
+              <span className="text-2xl font-bold text-white">PRO SHOP</span>
+
+              <p className="text-[16px] capitalize leading-[23px] text-white sm:text-[18px]">
+                Bringing you thoughtfully made clothing, from everyday basics to
+                festive statement pieces.
+              </p>
             </div>
 
-            <div className="flex gap-10 sm:gap-16">
+            <div className="flex w-full max-w-[1184px] flex-col flex-wrap items-start justify-between gap-10 sm:flex-row">
+              {/* Contact */}
               <div className="flex flex-col items-start gap-5">
-                <span className="text-[16px] font-bold uppercase text-white">
-                  Shop
-                </span>
-                <div className="flex flex-col items-start gap-2 text-[14px] text-white">
-                  <a href="#">New In</a>
-                  <a href="#">Offers</a>
-                  <a href="#">Categories</a>
-                  <a href="#">All</a>
+                <div className="flex items-center gap-2.5 text-[14px] text-white">
+                  <MapPin className="h-[18px] w-[18px]" strokeWidth={1.2} />
+                  <span>House 12, Road 5, Dhaka, Bangladesh</span>
                 </div>
-              </div>
-              <div className="flex flex-col items-start gap-5">
-                <span className="text-[16px] font-bold uppercase text-white">
-                  Company
-                </span>
-                <div className="flex flex-col items-start gap-2 text-[14px] text-white">
-                  <a href="#">About</a>
-                  <a href="#">Contact us</a>
-                  <a href="#">Careers</a>
-                </div>
-              </div>
-              <div className="flex flex-col items-start gap-5">
-                <span className="text-[16px] font-bold uppercase text-white">
-                  Support
-                </span>
-                <div className="flex flex-col items-start gap-2 text-[14px] text-white">
-                  <a href="#">Track order</a>
-                  <a href="#">Returns</a>
-                  <a href="#">FAQ</a>
-                </div>
-              </div>
-            </div>
 
-            <div className="flex flex-col items-start gap-5">
-              <span className="text-[16px] font-bold uppercase text-white">
-                Account
-              </span>
-              <div className="flex flex-col items-start gap-2 text-[14px] text-white">
-                <a href="#">Sign in</a>
-                <a href="#">Wishlist</a>
+                <div className="flex items-center gap-2.5 text-[14px] text-white">
+                  <Mail className="h-[18px] w-[18px]" strokeWidth={1.2} />
+                  <span>hello@proshop.com</span>
+                  <Copy className="h-[15px] w-[15px]" strokeWidth={1.2} />
+                </div>
+
+                <div className="text-[18px] font-bold tracking-wider text-white">
+                  +880 1234 567890
+                </div>
+              </div>
+
+              {/* Navigation */}
+              <div className="flex gap-10 sm:gap-16">
+                <div className="flex flex-col items-start gap-5">
+                  <span className="text-[16px] font-bold uppercase text-white">
+                    Shop
+                  </span>
+
+                  <div className="flex flex-col items-start gap-2 text-[14px] text-white">
+                    <a href="#">New In</a>
+                    <a href="#">Offers</a>
+                    <a href="#">Categories</a>
+                    <a href="#">All</a>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-start gap-5">
+                  <span className="text-[16px] font-bold uppercase text-white">
+                    Company
+                  </span>
+
+                  <div className="flex flex-col items-start gap-2 text-[14px] text-white">
+                    <a href="#">About</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Careers</a>
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-start gap-5">
+                  <span className="text-[16px] font-bold uppercase text-white">
+                    Support
+                  </span>
+
+                  <div className="flex flex-col items-start gap-2 text-[14px] text-white">
+                    <a href="#">Track order</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Account */}
+              <div className="flex flex-col items-start gap-5">
+                <span className="text-[16px] font-bold uppercase text-white">
+                  Account
+                </span>
+
+                <div className="flex flex-col items-start gap-2 text-[14px] text-white">
+                  <a href="#">Sign in</a>
+                  <a href="#">Wishlist</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="flex flex-col items-center gap-4 bg-[#830554] px-4 py-6 sm:flex-row sm:justify-between sm:px-12 md:px-32">
           <p className="text-[14px] font-semibold text-white sm:text-[16px]">
             Copyright © 2026. Pro Shop. All rights reserved.
           </p>
+
           <div className="flex items-center gap-4">
-            {/* <Facebook className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
-            {/* <Twitter className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
-            {/* <Instagram className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
+            {/* Social Icons */}
+            {/* <Facebook className="h-5 w-5 text-white" /> */}
+            {/* <Twitter className="h-5 w-5 text-white" /> */}
+            {/* <Instagram className="h-5 w-5 text-white" /> */}
           </div>
+
           <div className="flex gap-6 text-[14px] font-semibold text-white sm:text-[16px]">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
