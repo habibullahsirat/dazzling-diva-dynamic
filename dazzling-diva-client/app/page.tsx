@@ -13,9 +13,9 @@ import {
   Copy,
   Tag,
   Star,
-  Facebook,
-  Twitter,
-  Instagram,
+  // Facebook,
+  // Twitter,
+  // Instagram,
   ArrowRight,
 } from "lucide-react";
 
@@ -39,37 +39,37 @@ const CATEGORIES = [
 ];
 
 const CATEGORY_CARDS = [
-  { name: "Sharee", img: "/images/fs4_2_1.jpg" },
-  { name: "Unstitched", img: "/images/fs4_1_2.jpg" },
-  { name: "Co-Ord Sets", img: "/images/fs4_3_1.jpg" },
-  { name: "Single Kamiz", img: "/images/fs4_7_2.jpg" },
+  { name: "Sharee", img: "/images/card1.jpg" },
+  { name: "Unstitched", img: "/images/card2.jpg" },
+  { name: "Co-Ord Sets", img: "/images/card3.jpg" },
+  { name: "Single Kamiz", img: "/images/card4.jpg" },
 ];
 
 const FLASH_DEAL_PRODUCTS = [
   {
     name: "Cotton Sharee",
-    img: "/images/fs4_2_1.jpg",
+    img: "/images/fs4_2_1.png",
     price: 1450,
     oldPrice: 2100,
     discount: "30%",
   },
   {
     name: "Silk Blouse",
-    img: "/images/fs4_1_2.jpg",
+    img: "/images/fs4_1_2.png",
     price: 890,
     oldPrice: 1200,
     discount: "26%",
   },
   {
     name: "Co-Ord Set",
-    img: "/images/fs4_3_1.jpg",
+    img: "/images/fs4_3_1.png",
     price: 2100,
     oldPrice: 2800,
     discount: "25%",
   },
   {
     name: "Kamiz Set",
-    img: "/images/fs4_7_2.jpg",
+    img: "/images/fs4_7_2.png",
     price: 1650,
     oldPrice: 2400,
     discount: "31%",
@@ -77,41 +77,41 @@ const FLASH_DEAL_PRODUCTS = [
 ];
 
 const NEW_ARRIVALS = [
-  { name: "Printed Sharee", img: "/images/fs4_2_1.jpg", price: 1650 },
-  { name: "Embroidered Blouse", img: "/images/fs4_1_2.jpg", price: 950 },
-  { name: "Festive Co-Ord", img: "/images/fs4_3_1.jpg", price: 2350 },
-  { name: "Chikankari Kamiz", img: "/images/fs8_testi_4.jpg", price: 1800 },
-  { name: "Handloom Sharee", img: "/images/fs4_4_2.jpg", price: 2100 },
-  { name: "Party Blouse", img: "/images/fs4_2_2.jpg", price: 1100 },
-  { name: "Casual Kamiz", img: "/images/fs4_3_2.jpg", price: 1400 },
+  { name: "Printed Sharee", img: "/images/fs4_2_1.png", price: 1650 },
+  { name: "Embroidered Blouse", img: "/images/fs4_1_2.png", price: 950 },
+  { name: "Festive Co-Ord", img: "/images/fs4_3_1.png", price: 2350 },
+  { name: "Chikankari Kamiz", img: "/images/fs8_testi_4.png", price: 1800 },
+  { name: "Handloom Sharee", img: "/images/fs4_4_2.png", price: 2100 },
+  { name: "Party Blouse", img: "/images/fs4_2_2.png", price: 1100 },
+  { name: "Casual Kamiz", img: "/images/fs4_3_2.png", price: 1400 },
 ];
 
 const FEATURED_COLLECTION = [
-  { img: "/images/fs4_2_2.jpg" },
-  { img: "/images/fs4_1_2.jpg" },
-  { img: "/images/fs4_3_2.jpg" },
+  { img: "/images/fs4_1_2.png" },
+  { img: "/images/fs4_2_2.png" },
+  { img: "/images/fs4_3_2.png" },
 ];
 
 const DETAIL_CALLOUTS = [
   {
     title: "New In",
     text: "Festive Sharee Edit",
-    img: "/images/fs8_testi_1.jpg",
+    img: "/images/fs8_testi_1.png",
   },
   {
     title: "Trending",
     text: "Everyday Co-Ord",
-    img: "/images/fs8_testi_2.jpg",
+    img: "/images/fs8_testi_2.png",
   },
   {
     title: "Limited",
     text: "Hand-Embroidered",
-    img: "/images/fs8_testi_3.jpg",
+    img: "/images/fs8_testi_3.png",
   },
   {
     title: "Popular",
     text: "Single Kamiz Sets",
-    img: "/images/fs8_testi_4.jpg",
+    img: "/images/fs8_testi_4.png",
   },
 ];
 
@@ -196,12 +196,12 @@ export default function LandingPage() {
           </button>
 
           {/* Logo */}
-          <a
+          {/* <a
             href="/"
             className="text-lg font-bold tracking-tight text-[#5A0C3D] sm:text-2xl"
           >
             PRO&nbsp;SHOP
-          </a>
+          </a> */}
 
           {/* Desktop nav links */}
           <div className="hidden items-center gap-2 md:flex">
@@ -343,7 +343,7 @@ export default function LandingPage() {
       --------------------------------------------------------------- */}
       <section
         className="relative h-[320px] w-full bg-cover bg-center sm:h-[420px] md:h-[525px]"
-        style={{ backgroundImage: "url(/images/hero.jpg)" }}
+        style={{ backgroundImage: "url(/images/source_image.png)" }}
       >
         <div className="absolute inset-0 bg-black/10" />
         <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-start gap-2.5 p-2.5">
@@ -595,7 +595,7 @@ export default function LandingPage() {
           className="flex min-h-[420px] flex-1 items-end bg-cover bg-center p-8 sm:min-h-[520px] md:p-12"
           style={{
             backgroundImage:
-              "linear-gradient(180deg, rgba(0,0,0,0) 50%, #000000 100%), url(/images/fs4_4_2.jpg)",
+              "linear-gradient(180deg, rgba(0,0,0,0) 50%, #000000 100%), url(/images/fs4_4_2.png)",
           }}
         >
           <div className="flex flex-col items-start gap-6">
@@ -679,7 +679,7 @@ export default function LandingPage() {
         className="flex w-full items-end justify-center bg-cover bg-center px-4 py-10 sm:px-12 md:px-16"
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(90,12,61,0) 50.1%, #5A0C3D 100%), url(/images/fs8_hero.jpg)",
+            "linear-gradient(180deg, rgba(90,12,61,0) 50.1%, #5A0C3D 100%), url(/images/source_fs8_hero.png)",
           minHeight: "420px",
         }}
       >
@@ -778,9 +778,9 @@ export default function LandingPage() {
             Copyright © 2026. Pro Shop. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Facebook className="h-5 w-5 text-white" strokeWidth={1.3} />
-            <Twitter className="h-5 w-5 text-white" strokeWidth={1.3} />
-            <Instagram className="h-5 w-5 text-white" strokeWidth={1.3} />
+            {/* <Facebook className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
+            {/* <Twitter className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
+            {/* <Instagram className="h-5 w-5 text-white" strokeWidth={1.3} /> */}
           </div>
           <div className="flex gap-6 text-[14px] font-semibold text-white sm:text-[16px]">
             <a href="#">Privacy</a>
