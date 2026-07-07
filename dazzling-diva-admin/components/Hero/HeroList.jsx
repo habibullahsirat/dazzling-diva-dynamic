@@ -102,6 +102,7 @@
 "use client";
 
 import Image from "next/image";
+import toast from "react-hot-toast";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 export default function HeroList({ heroes, fetchHeroes, onEdit }) {

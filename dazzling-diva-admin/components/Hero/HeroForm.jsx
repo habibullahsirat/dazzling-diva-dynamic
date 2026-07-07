@@ -301,6 +301,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function HeroForm({ hero, fetchHeroes, closeModal }) {
   const [title, setTitle] = useState("");
@@ -336,7 +337,7 @@ export default function HeroForm({ hero, fetchHeroes, closeModal }) {
     e.preventDefault();
 
     if (!title || !description) {
-      alert("Please fill all required fields.");
+      toast.error("Please fill all required fields.");
       return;
     }
 
@@ -391,10 +392,14 @@ export default function HeroForm({ hero, fetchHeroes, closeModal }) {
 
       await fetchHeroes();
 
+      toast.success(
+        hero ? "Hero updated successfully." : "Hero added successfully.",
+      );
+
       closeModal();
     } catch (error) {
       console.error(error);
-      alert("Something went wrong.");
+      toast.error("Something went wrong.");
     } finally {
       setLoading(false);
     }

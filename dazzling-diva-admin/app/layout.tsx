@@ -58,7 +58,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
         <Analytics />
-        <Toaster />
+        <Toaster position="top-right" />
       </body>
     </html>
   );
