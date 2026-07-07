@@ -1,8 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, HomeIcon } from "lucide-react";
+import {
+  Monitor,
+  Image,
+  LayoutGrid,
+  Zap,
+  Package,
+  Columns2,
+  Sparkles,
+  Megaphone,
+  Heart,
+  Bell,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
@@ -19,202 +29,82 @@ interface NavGroup {
   isOpen?: boolean;
 }
 
-const defaultNavGroups: NavGroup[] = [
+interface NavItem {
+  label: string;
+  href: string;
+  icon: ReactNode;
+}
+
+const navItems: NavItem[] = [
   {
     label: "Dashboard",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 11l4-4m0 0l4 4m-4-4V3"
-        />
-      </svg>
-    ),
-    items: [
-      {
-        label: "Dashboard",
-        href: "/admin",
-        icon: <span className="w-2 h-2 bg-blue-400 rounded-full"></span>,
-      },
-    ],
+    href: "/admin",
+    icon: <Monitor className="w-5 h-5" />,
   },
   {
-    label: "Home Page",
-    icon: <HomeIcon className="w-5 h-5" />,
-    items: [
-      {
-        label: "Hero",
-        href: "/admin/heros",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-      {
-        label: "We Work",
-        href: "/admin/we-work",
-        icon: <span className="w-2 h-2 bg-green-400 rounded-full"></span>,
-      },
-      {
-        label: "Apart",
-        href: "/admin/apart",
-        icon: <span className="w-2 h-2 bg-green-400 rounded-full"></span>,
-      },
-      {
-        label: "Services",
-        href: "/admin/services",
-        icon: <span className="w-2 h-2 bg-indigo-400 rounded-full"></span>,
-      },
-      {
-        label: "Buying House",
-        href: "/admin/buying-house",
-        icon: <span className="w-2 h-2 bg-blue-400 rounded-full"></span>,
-      },
-      {
-        label: "Catalog",
-        href: "/admin/catalog",
-        icon: <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>,
-      },
-    ],
+    label: "Hero",
+    href: "/admin/hero",
+    icon: <Image className="w-5 h-5" />,
   },
   {
-    label: "About Page",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 11l4-4m0 0l4 4m-4-4V3"
-        />
-      </svg>
-    ),
-    items: [
-      {
-        label: "Established Excellence",
-        href: "/admin/established-excellence",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-      {
-        label: "We Work",
-        href: "/admin/we-work",
-        icon: <span className="w-2 h-2 bg-green-400 rounded-full"></span>,
-      },
-    ],
+    label: "Category",
+    href: "/admin/category",
+    icon: <LayoutGrid className="w-5 h-5" />,
   },
   {
-    label: "Buying House",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 11l4-4m0 0l4 4m-4-4V3"
-        />
-      </svg>
-    ),
-    items: [
-      {
-        label: "Products",
-        href: "/admin/products",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-    ],
+    label: "Flash Deal",
+    href: "/admin/flash-deal",
+    icon: <Zap className="w-5 h-5" />,
   },
   {
-    label: "Factory Machinery",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 11l4-4m0 0l4 4m-4-4V3"
-        />
-      </svg>
-    ),
-    items: [
-      {
-        label: "Advance Machinery",
-        href: "/admin/advance-machinery",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-      {
-        label: "Factory Info",
-        href: "/admin/factory-info",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-      {
-        label: "Machinery Inventory",
-        href: "/admin/machinery-inventory",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-    ],
+    label: "Flash Products",
+    href: "/admin/flash-products",
+    icon: <Package className="w-5 h-5" />,
   },
   {
-    label: "Contact",
-    icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3 12l2-3m0 0l7-4 7 4M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9m-9 11l4-4m0 0l4 4m-4-4V3"
-        />
-      </svg>
-    ),
-    items: [
-      {
-        label: "Contact",
-        href: "/admin/contact",
-        icon: <span className="w-2 h-2 bg-purple-400 rounded-full"></span>,
-      },
-    ],
+    label: "Two Column Section",
+    href: "/admin/two-column-section",
+    icon: <Columns2 className="w-5 h-5" />,
+  },
+  {
+    label: "New Arrivals",
+    href: "/admin/new-arrivals",
+    icon: <Sparkles className="w-5 h-5" />,
+  },
+  {
+    label: "Detailed Callout",
+    href: "/admin/detailed-callout",
+    icon: <Megaphone className="w-5 h-5" />,
+  },
+  {
+    label: "Most Loved Products",
+    href: "/admin/most-loved-products",
+    icon: <Heart className="w-5 h-5" />,
+  },
+  {
+    label: "Callout",
+    href: "/admin/callout",
+    icon: <Bell className="w-5 h-5" />,
   },
 ];
 
 export default function AdminSidebar() {
   const pathname = usePathname();
-  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
+  //   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
 
   // Initialize open groups with Create Section open by default
-  useEffect(() => {
-    setOpenGroups({
-      "Create Section": true,
-    });
-  }, []);
+  //   useEffect(() => {
+  //     setOpenGroups({
+  //       "Create Section": true,
+  //     });
+  //   }, []);
 
-  const toggleGroup = (label: string) => {
-    setOpenGroups((prev) => ({
-      ...prev,
-      [label]: !prev[label],
-    }));
-  };
+  //   const toggleGroup = (label: string) => {
+  //     setOpenGroups((prev) => ({
+  //       ...prev,
+  //       [label]: !prev[label],
+  //     }));
+  //   };
 
   const isItemActive = (href: string) => {
     if (href === "/admin") {
@@ -244,7 +134,7 @@ export default function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
+      {/* <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
         {defaultNavGroups.map((group) => {
           const isGroupOpen = openGroups[group.label];
           const hasMultipleItems = group.items.length > 1;
@@ -319,6 +209,30 @@ export default function AdminSidebar() {
                 </Link>
               )}
             </div>
+          );
+        })}
+      </nav> */}
+
+      <nav className="flex-1 overflow-y-auto px-4 py-6 space-y-2">
+        {navItems.map((item) => {
+          const isActive = isItemActive(item.href);
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex items-center gap-3 rounded-lg px-4 py-3 transition-colors font-medium ${
+                isActive
+                  ? "bg-blue-50 text-blue-700"
+                  : "text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <span className={isActive ? "text-blue-600" : "text-gray-600"}>
+                {item.icon}
+              </span>
+
+              {item.label}
+            </Link>
           );
         })}
       </nav>
