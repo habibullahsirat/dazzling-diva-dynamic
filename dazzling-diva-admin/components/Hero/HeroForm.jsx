@@ -1,3 +1,152 @@
+// "use client";
+
+// import { useState } from "react";
+
+// export default function HeroForm({ onSuccess, onClose }) {
+//   const [title, setTitle] = useState("");
+//   const [description, setDescription] = useState("");
+//   const [ctaText, setCtaText] = useState("");
+//   const [ctaHref, setCtaHref] = useState("");
+//   const [image, setImage] = useState(null);
+//   const [loading, setLoading] = useState(false);
+
+//   async function handleSubmit(e) {
+//     e.preventDefault();
+
+//     if (!title || !description || !image) {
+//       alert("Please fill in all required fields.");
+//       return;
+//     }
+
+//     try {
+//       setLoading(true);
+
+//       // Upload image to Cloudinary
+//       const uploadData = new FormData();
+//       uploadData.append("file", image);
+
+//       const uploadRes = await fetch("/api/upload", {
+//         method: "POST",
+//         body: uploadData,
+//       });
+
+//       if (!uploadRes.ok) {
+//         throw new Error("Image upload failed.");
+//       }
+
+//       const uploaded = await uploadRes.json();
+
+//       // Save hero data
+//       const heroRes = await fetch("/api/heroes", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           title,
+//           description,
+//           image: uploaded.secure_url,
+//           cta: {
+//             text: ctaText,
+//             href: ctaHref,
+//           },
+//         }),
+//       });
+
+//       if (!heroRes.ok) {
+//         throw new Error("Failed to save hero.");
+//       }
+
+//       // alert("Hero Added Successfully!");
+//       const createdHero = await heroRes.json();
+
+//       onSuccess(createdHero.data);
+//       onClose();
+
+//       // Reset form
+//       setTitle("");
+//       setDescription("");
+//       setCtaText("");
+//       setCtaHref("");
+//       setImage(null);
+
+//       // Reset file input
+//       document.getElementById("hero-image").value = "";
+//     } catch (error) {
+//       console.error(error);
+//       alert("Something went wrong.");
+//     } finally {
+//       setLoading(false);
+//     }
+//   }
+
+//   return (
+//     <form
+//       onSubmit={handleSubmit}
+//       className="max-w-lg space-y-4 rounded-lg bg-white p-6 shadow"
+//     >
+//       <input
+//         type="text"
+//         className="w-full rounded border p-2"
+//         placeholder="Hero Title"
+//         value={title}
+//         onChange={(e) => setTitle(e.target.value)}
+//       />
+
+//       <textarea
+//         className="w-full rounded border p-2"
+//         placeholder="Hero Description"
+//         rows={4}
+//         value={description}
+//         onChange={(e) => setDescription(e.target.value)}
+//       />
+
+//       <input
+//         type="text"
+//         className="w-full rounded border p-2"
+//         placeholder="CTA Button Text"
+//         value={ctaText}
+//         onChange={(e) => setCtaText(e.target.value)}
+//       />
+
+//       <input
+//         type="text"
+//         className="w-full rounded border p-2"
+//         placeholder="CTA Link"
+//         value={ctaHref}
+//         onChange={(e) => setCtaHref(e.target.value)}
+//       />
+
+//       <input
+//         id="hero-image"
+//         type="file"
+//         accept="image/*"
+//         onChange={(e) => {
+//           if (e.target.files && e.target.files.length > 0) {
+//             setImage(e.target.files[0]);
+//           }
+//         }}
+//       />
+
+//       {image && (
+//         <img
+//           src={URL.createObjectURL(image)}
+//           alt="Preview"
+//           className="h-40 w-full rounded border object-cover"
+//         />
+//       )}
+
+//       <button
+//         type="submit"
+//         disabled={loading}
+//         className="rounded bg-blue-600 px-5 py-2 text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-400"
+//       >
+//         {loading ? "Uploading..." : "Add Hero"}
+//       </button>
+//     </form>
+//   );
+// }
+
 "use client";
 
 import { useState } from "react";
@@ -21,7 +170,7 @@ export default function HeroForm({ onSuccess, onClose }) {
     try {
       setLoading(true);
 
-      // Upload image to Cloudinary
+      // Upload image
       const uploadData = new FormData();
       uploadData.append("file", image);
 
@@ -31,12 +180,12 @@ export default function HeroForm({ onSuccess, onClose }) {
       });
 
       if (!uploadRes.ok) {
-        throw new Error("Image upload failed.");
+        throw new Error("Image upload failed");
       }
 
       const uploaded = await uploadRes.json();
 
-      // Save hero data
+      // Save hero
       const heroRes = await fetch("/api/heroes", {
         method: "POST",
         headers: {
@@ -54,13 +203,13 @@ export default function HeroForm({ onSuccess, onClose }) {
       });
 
       if (!heroRes.ok) {
-        throw new Error("Failed to save hero.");
+        throw new Error("Failed to save hero");
       }
 
-      // alert("Hero Added Successfully!");
-      const createdHero = await heroRes.json();
+      // Refresh hero list
+      await onSuccess();
 
-      onSuccess(createdHero.data);
+      // Close modal
       onClose();
 
       // Reset form
@@ -70,8 +219,12 @@ export default function HeroForm({ onSuccess, onClose }) {
       setCtaHref("");
       setImage(null);
 
-      // Reset file input
-      document.getElementById("hero-image").value = "";
+      const input = document.getElementById("hero-image");
+      if (input) {
+        input.value = "";
+      }
+
+      alert("Hero Added Successfully!");
     } catch (error) {
       console.error(error);
       alert("Something went wrong.");
@@ -81,40 +234,37 @@ export default function HeroForm({ onSuccess, onClose }) {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-lg space-y-4 rounded-lg bg-white p-6 shadow"
-    >
+    <form onSubmit={handleSubmit} className="space-y-4">
       <input
         type="text"
-        className="w-full rounded border p-2"
         placeholder="Hero Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="w-full rounded border p-2"
       />
 
       <textarea
-        className="w-full rounded border p-2"
-        placeholder="Hero Description"
         rows={4}
+        placeholder="Hero Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        className="w-full rounded border p-2"
       />
 
       <input
         type="text"
-        className="w-full rounded border p-2"
-        placeholder="CTA Button Text"
+        placeholder="CTA Text"
         value={ctaText}
         onChange={(e) => setCtaText(e.target.value)}
+        className="w-full rounded border p-2"
       />
 
       <input
         type="text"
-        className="w-full rounded border p-2"
         placeholder="CTA Link"
         value={ctaHref}
         onChange={(e) => setCtaHref(e.target.value)}
+        className="w-full rounded border p-2"
       />
 
       <input
@@ -122,7 +272,7 @@ export default function HeroForm({ onSuccess, onClose }) {
         type="file"
         accept="image/*"
         onChange={(e) => {
-          if (e.target.files && e.target.files.length > 0) {
+          if (e.target.files?.length) {
             setImage(e.target.files[0]);
           }
         }}
@@ -139,7 +289,7 @@ export default function HeroForm({ onSuccess, onClose }) {
       <button
         type="submit"
         disabled={loading}
-        className="rounded bg-blue-600 px-5 py-2 text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-gray-400"
+        className="rounded bg-blue-600 px-5 py-2 text-white hover:bg-blue-700 disabled:bg-gray-400"
       >
         {loading ? "Uploading..." : "Add Hero"}
       </button>
