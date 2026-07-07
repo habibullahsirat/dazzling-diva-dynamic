@@ -148,8 +148,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HeroForm from "./HeroForm";
-import HeroList from "./HeroList";
+import HeroForm from "@/components/Hero/HeroForm";
+import HeroList from "@/components/Hero/HeroList";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function HeroSection() {
   const [heroes, setHeroes] = useState([]);
@@ -209,7 +210,7 @@ export default function HeroSection() {
 
       {/* Hero List */}
       {loading ? (
-        <p>Loading...</p>
+        <LoadingSpinner />
       ) : (
         <HeroList
           heroes={heroes}
