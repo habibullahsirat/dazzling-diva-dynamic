@@ -124,9 +124,10 @@ export default function HeroList({ heroes, fetchHeroes, onEdit }) {
 
       // Refresh hero list
       fetchHeroes();
+      toast.success("Hero deleted.");
     } catch (error) {
       console.error(error);
-      alert("Failed to delete hero.");
+      toast.error("Failed to delete hero.");
     }
   }
 

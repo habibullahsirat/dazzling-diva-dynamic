@@ -462,6 +462,24 @@ export default function HeroForm({ hero, fetchHeroes, closeModal }) {
 
               setPreview(URL.createObjectURL(file));
             }
+            // const file = e.target.files[0];
+
+            // if (!file) return;
+
+            // // Maximum 2 MB
+            // if (file.size > 2 * 1024 * 1024) {
+            //   toast.error("Image must be smaller than 2 MB.");
+            //   return;
+            // }
+
+            // // Only images
+            // if (!file.type.startsWith("image/")) {
+            //   toast.error("Please select an image.");
+            //   return;
+            // }
+
+            // setImage(file);
+            // setPreview(URL.createObjectURL(file));
           }}
         />
       </div>
