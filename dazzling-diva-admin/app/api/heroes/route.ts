@@ -16,8 +16,11 @@ export async function POST(req: Request) {
 
     // Connect to the database
     await connectToDB();
-    await HeroSection.create(data);
-    return NextResponse.json({ message: "Data created" }, { status: 201 });
+    const hero = await HeroSection.create(data);
+    return NextResponse.json(
+      { message: "Data created", data: hero },
+      { status: 201 },
+    );
   } catch (error) {
     console.error("Error creating data:", error);
     return NextResponse.json(

@@ -4,25 +4,25 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
-export default function HeroList() {
-  const [heroes, setHeroes] = useState([]);
-  const [loading, setLoading] = useState(true);
+export default function HeroList({ heroes, setHeroes }) {
+  //   const [heroes, setHeroes] = useState([]);
+  //   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchHeroes();
-  }, []);
+  //   useEffect(() => {
+  //     fetchHeroes();
+  //   }, []);
 
-  async function fetchHeroes() {
-    try {
-      const res = await fetch("/api/heroes");
-      const data = await res.json();
-      setHeroes(data);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+  //   async function fetchHeroes() {
+  //     try {
+  //       const res = await fetch("/api/heroes");
+  //       const data = await res.json();
+  //       setHeroes(data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
 
   async function handleDelete(id) {
     const confirmDelete = window.confirm(
@@ -52,9 +52,9 @@ export default function HeroList() {
     // Later you'll open your edit modal/form here.
   }
 
-  if (loading) {
-    return <p className="text-center py-10">Loading...</p>;
-  }
+  //   if (loading) {
+  //     return <p className="text-center py-10">Loading...</p>;
+  //   }
 
   if (heroes.length === 0) {
     return <p className="text-center py-10">No heroes found.</p>;

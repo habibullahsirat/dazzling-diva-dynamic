@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function HeroForm() {
+export default function HeroForm({ onSuccess, onClose }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [ctaText, setCtaText] = useState("");
@@ -57,7 +57,11 @@ export default function HeroForm() {
         throw new Error("Failed to save hero.");
       }
 
-      alert("Hero Added Successfully!");
+      // alert("Hero Added Successfully!");
+      const createdHero = await heroRes.json();
+
+      onSuccess(createdHero.data);
+      onClose();
 
       // Reset form
       setTitle("");
