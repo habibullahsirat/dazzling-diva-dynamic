@@ -123,11 +123,11 @@ export default function AdminSidebar() {
       {/* Logo */}
       <div className="p-6 border-b border-gray-200">
         <Link href="/admin" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">AS</span>
+          <div className="w-10 h-10  rounded-lg flex items-center justify-center">
+            <img src="/color-logo.png" alt="Dazzling Diva Logo" />
           </div>
           <div>
-            <p className="font-bold text-gray-900">ASBD </p>
+            <p className="font-bold text-gray-900">Dazzling Diva </p>
             <p className="text-xs text-gray-600">AdminPanel-v1.0</p>
           </div>
         </Link>
