@@ -1,0 +1,79 @@
+"use client";
+
+import Image from "next/image";
+import toast from "react-hot-toast";
+import { FaEdit, FaTrash } from "react-icons/fa";
+
+export default function CategoryList({ categories, fetchCategories, onEdit }) {
+  async function handleDelete(id) {
+    if (!window.confirm("Delete this category?")) return;
+
+    try {
+      const res = await fetch(`/api/categories/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        throw new Error();
+      }
+
+      fetchCategories();
+
+      toast.success("Category deleted.");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to delete category.");
+    }
+  }
+
+  if (categories.length === 0) {
+    return (
+      <p className="py-10 text-center text-gray-500">No categories found.</p>
+    );
+  }
+
+  return (
+    <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {categories.map((category) => (
+        <div
+          key={category._id}
+          className="overflow-hidden rounded-lg border bg-white shadow"
+        >
+          <div className="relative h-56">
+            <Image
+              src={category.image}
+              alt={category.name}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="space-y-3 p-4">
+            <h2 className="text-xl font-bold">{category.name}</h2>
+
+            <div>
+              <span className="font-semibold">CTA Text:</span>{" "}
+              {category.cta?.text}
+            </div>
+
+            <div className="flex justify-end gap-3 pt-3">
+              <button
+                onClick={() => onEdit(category)}
+                className="rounded bg-blue-600 p-2 text-white"
+              >
+                <FaEdit />
+              </button>
+
+              <button
+                onClick={() => handleDelete(category._id)}
+                className="rounded bg-red-600 p-2 text-white"
+              >
+                <FaTrash />
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
