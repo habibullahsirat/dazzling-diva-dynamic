@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Hero from "@/components/Hero";
 import {
   Menu,
   X,
@@ -341,7 +342,8 @@ export default function LandingPage() {
       {/* ---------------------------------------------------------------
           HERO
       --------------------------------------------------------------- */}
-      <section
+      <Hero />
+      {/* <section
         className="relative h-[320px] w-full bg-cover bg-center sm:h-[420px] md:h-[525px]"
         style={{ backgroundImage: "url(/images/source_image.png)" }}
       >
@@ -360,7 +362,7 @@ export default function LandingPage() {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------------------------------------------------------
           CATEGORY SECTION

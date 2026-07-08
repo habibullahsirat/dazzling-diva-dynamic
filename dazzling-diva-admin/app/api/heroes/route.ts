@@ -7,6 +7,9 @@ export async function GET() {
   const project = await HeroSection.find();
   const response = NextResponse.json(project);
   response.headers.set("Access-Control-Allow-Origin", "*");
+  // response.headers.set("Access-Control-Allow-Origin", "http://localhost:3001");
+  // response.headers.set("Access-Control-Allow-Methods", "GET");
+  // response.headers.set("Access-Control-Allow-Headers", "Content-Type");
   return response;
 }
 
