@@ -19,6 +19,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Hero from "@/components/hero/Hero";
+import Category from "@/components/category/Category";
+import FlashDeals from "@/components/flash-deals/FlashDeals";
 
 /* -------------------------------------------------------------------------
    STATIC DATA
@@ -367,7 +369,9 @@ export default function LandingPage() {
       {/* ---------------------------------------------------------------
           CATEGORY SECTION
       --------------------------------------------------------------- */}
-      <section className="flex flex-col items-center gap-8 px-4 py-12 sm:px-8 md:gap-12 md:px-16">
+
+      <Category />
+      {/* <section className="flex flex-col items-center gap-8 px-4 py-12 sm:px-8 md:gap-12 md:px-16">
         <div className="flex max-w-[610px] flex-col items-center gap-2 text-center">
           <p className="text-[16px] capitalize sm:text-[18px]">Shop by</p>
           <h2 className="text-[30px] font-normal uppercase leading-tight sm:text-[40px] md:text-[48px] md:leading-[60px]">
@@ -399,12 +403,13 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------------------------------------------------------
           FLASH DEALS SECTION
       --------------------------------------------------------------- */}
-      <section
+      <FlashDeals />
+      {/* <section
         className="relative flex flex-col items-center gap-10 overflow-hidden bg-[#5A0C3D] bg-cover bg-center px-4 py-16 sm:px-8 md:px-16"
         style={{
           backgroundImage:
@@ -431,7 +436,7 @@ export default function LandingPage() {
           </div>
 
           {/* Countdown */}
-          <div className="flex items-center justify-center gap-3">
+          {/* <div className="flex items-center justify-center gap-3">
             {[
               ["Days", countdown.d],
               ["Hours", countdown.h],
@@ -461,7 +466,7 @@ export default function LandingPage() {
             While stocks last. Ends when the timer runs out.
           </p>
         </div>
-      </section>
+      </section> */} */}
       <section>
         {/* Flash deal products */}
         <div className="grid w-full max-w-[1312px] grid-cols-2 gap-3 sm:grid-cols-4">
