@@ -93,3 +93,36 @@ export default function Hero() {
     </section>
   );
 }
+
+/////////////////////////////
+// Version 2
+
+// import HeroSlider from "@/components/hero/HeroSlider";
+
+// async function getHeroes() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_ADMIN_API}/api/heroes`, {
+//     cache: "no-store",
+//   });
+
+//   if (!res.ok) {
+//     return [];
+//   }
+
+//   return res.json();
+// }
+
+// export default async function Hero() {
+//   const heroes = await getHeroes();
+
+//   console.log(heroes);
+
+//   if (heroes.length === 0) {
+//     return (
+//       <section className="flex h-[320px] items-center justify-center bg-gray-100 sm:h-[420px] md:h-[525px]">
+//         No Hero Found
+//       </section>
+//     );
+//   }
+
+//   return <HeroSlider heroes={heroes} />;
+// }

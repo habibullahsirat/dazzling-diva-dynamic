@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Hero from "@/components/Hero";
 import {
   Menu,
   X,
@@ -19,6 +18,7 @@ import {
   // Instagram,
   ArrowRight,
 } from "lucide-react";
+import Hero from "@/components/hero/Hero";
 
 /* -------------------------------------------------------------------------
    STATIC DATA
