@@ -47,7 +47,7 @@ export default function TwoColumnList({ items, fetchItems, onEdit }) {
                 />
               </div>
 
-              <h3 className="mt-3 font-bold">{item.left.category_name}</h3>
+              <h3 className="mt-3 font-bold">{item.left.categoryname}</h3>
 
               <p>{item.left.title}</p>
 
@@ -66,7 +66,7 @@ export default function TwoColumnList({ items, fetchItems, onEdit }) {
                 />
               </div>
 
-              <h3 className="mt-3 font-bold">{item.right.category_name}</h3>
+              <h3 className="mt-3 font-bold">{item.right.categoryName}</h3>
 
               <p>{item.right.title}</p>
 

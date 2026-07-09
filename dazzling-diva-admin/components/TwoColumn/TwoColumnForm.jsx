@@ -26,12 +26,12 @@ export default function TwoColumnForm({ item, fetchItems, closeModal }) {
 
   useEffect(() => {
     if (item) {
-      setLeftCategory(item.left.category_name);
+      setLeftCategory(item.left.categoryName);
       setLeftTitle(item.left.title);
       setLeftCTA(item.left.cta?.text);
       setLeftPreview(item.left.image);
 
-      setRightCategory(item.right.category_name);
+      setRightCategory(item.right.categoryName);
       setRightTitle(item.right.title);
       setRightCTA(item.right.cta?.text);
       setRightPreview(item.right.image);
@@ -80,9 +80,27 @@ export default function TwoColumnForm({ item, fetchItems, closeModal }) {
         headers: {
           "Content-Type": "application/json",
         },
+        // body: JSON.stringify({
+        //   left: {
+        //     category_name: leftCategory,
+        //     title: leftTitle,
+        //     image: leftImageUrl,
+        //     cta: {
+        //       text: leftCTA,
+        //     },
+        //   },
+        //   right: {
+        //     category_name: rightCategory,
+        //     title: rightTitle,
+        //     image: rightImageUrl,
+        //     cta: {
+        //       text: rightCTA,
+        //     },
+        //   },
+        // }),
         body: JSON.stringify({
           left: {
-            category_name: leftCategory,
+            categoryName: leftCategory,
             title: leftTitle,
             image: leftImageUrl,
             cta: {
@@ -90,7 +108,7 @@ export default function TwoColumnForm({ item, fetchItems, closeModal }) {
             },
           },
           right: {
-            category_name: rightCategory,
+            categoryName: rightCategory,
             title: rightTitle,
             image: rightImageUrl,
             cta: {
