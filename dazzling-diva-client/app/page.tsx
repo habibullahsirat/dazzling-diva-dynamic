@@ -467,7 +467,7 @@ export default function LandingPage() {
           </p>
         </div>
       </section> */} */}
-      <section>
+      {/* <section>
         {/* Flash deal products */}
         <div className="grid w-full max-w-[1312px] grid-cols-2 gap-3 sm:grid-cols-4">
           {FLASH_DEAL_PRODUCTS.map((p) => (
@@ -503,7 +503,7 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ---------------------------------------------------------------
           TWO COLUMN CALLOUT SECTION
