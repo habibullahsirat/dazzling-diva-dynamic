@@ -63,7 +63,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Two Column Section",
-    href: "/admin/two-column-section",
+    href: "/admin/two-column",
     icon: <Columns2 className="w-5 h-5" />,
   },
   {
