@@ -78,7 +78,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Most Loved Products",
-    href: "/admin/most-loved-products",
+    href: "/admin/featured-collection",
     icon: <Heart className="w-5 h-5" />,
   },
   {
