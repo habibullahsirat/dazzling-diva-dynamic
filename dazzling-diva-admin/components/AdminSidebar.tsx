@@ -42,6 +42,11 @@ const navItems: NavItem[] = [
     icon: <Monitor className="w-5 h-5" />,
   },
   {
+    label: "Category Navbar",
+    href: "/admin/navbar-category",
+    icon: <Monitor className="w-5 h-5" />,
+  },
+  {
     label: "Hero",
     href: "/admin/hero",
     icon: <Image className="w-5 h-5" />,
