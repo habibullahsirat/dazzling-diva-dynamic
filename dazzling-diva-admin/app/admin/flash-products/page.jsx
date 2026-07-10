@@ -1,4 +1,4 @@
-import FlashDealProductSection from "@/components/FlashDealProduct/FlashDealProductSection";
+import FlashDealProductSection from "@/components/FlashDealProducts/FlashDealProductSection";
 
 export default function FlashDealProduct() {
   return (

@@ -71,9 +71,21 @@ export default function FlashDealProductList({
               {product.originalPrice}
             </div>
 
+            {/* {Math.round(
+              ((product.originalPrice - product.discountedPrice) /
+                product.originalPrice) *
+                100,
+            )} */}
+
             <div>
               <span className="font-semibold">Discount:</span>{" "}
-              {product.discountPercentage}%
+              {/* {product.discountPercentage}% */}
+              {Math.round(
+                ((product.originalPrice - product.discountedPrice) /
+                  product.originalPrice) *
+                  100,
+              )}
+              %
             </div>
 
             <div>

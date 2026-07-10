@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import FlashDealProductForm from "@/components/FlashDealProduct/FlashDealProductForm";
-import FlashDealProductList from "@/components/FlashDealProduct/FlashDealProductList";
+import FlashDealProductForm from "@/components/FlashDealProducts/FlashDealProductForm";
+import FlashDealProductList from "@/components/FlashDealProducts/FlashDealProductList";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function FlashDealProductSection() {
