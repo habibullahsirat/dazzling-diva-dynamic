@@ -91,6 +91,11 @@ const navItems: NavItem[] = [
     href: "/admin/callout",
     icon: <Bell className="w-5 h-5" />,
   },
+  {
+    label: "Add Product",
+    href: "/admin/add-product",
+    icon: <Bell className="w-5 h-5" />,
+  },
 ];
 
 export default function AdminSidebar() {
