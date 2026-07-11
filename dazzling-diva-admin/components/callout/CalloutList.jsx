@@ -43,13 +43,13 @@ export default function CalloutList({ callouts, fetchCallouts, onEdit }) {
           key={callout._id}
           className="overflow-hidden rounded-lg border bg-white shadow"
         >
-          <div className="relative h-60">
+          <div className="relative h-100">
             <Image
               src={callout.image}
               alt={callout.title}
               fill
               sizes="(max-width:768px) 100vw, 33vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 

@@ -45,13 +45,13 @@ export default function FeaturedCollectionList({
           key={collection._id}
           className="overflow-hidden rounded-lg border bg-white shadow"
         >
-          <div className="relative h-72">
+          <div className="relative h-100">
             <Image
               src={collection.image}
               alt="Featured Collection"
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 

@@ -49,12 +49,12 @@ export default function FlashDealProductList({
           key={product._id}
           className="overflow-hidden rounded-lg border bg-white shadow"
         >
-          <div className="relative h-56">
+          <div className="relative h-100">
             <Image
               src={product.image}
               alt={product.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 

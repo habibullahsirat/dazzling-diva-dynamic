@@ -39,13 +39,13 @@ export default function NewArrivalList({ products, fetchProducts, onEdit }) {
           key={product._id}
           className="overflow-hidden rounded-lg border bg-white shadow"
         >
-          <div className="relative h-64">
+          <div className="relative h-100">
             <Image
               src={product.image}
               alt={product.title}
               fill
               sizes="300px"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 
