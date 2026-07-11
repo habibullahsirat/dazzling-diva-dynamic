@@ -22,12 +22,12 @@ interface NavItem {
   icon: ReactNode;
 }
 
-interface NavGroup {
-  label: string;
-  icon: ReactNode;
-  items: NavItem[];
-  isOpen?: boolean;
-}
+// interface NavGroup {
+//   label: string;
+//   icon: ReactNode;
+//   items: NavItem[];
+//   isOpen?: boolean;
+// }
 
 interface NavItem {
   label: string;
@@ -36,20 +36,21 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
+  // {
+  //   label: "Dashboard",
+  //   href: "/admin",
+  //   icon: <Monitor className="w-5 h-5" />,
+  // },
+
   {
-    label: "Dashboard",
-    href: "/admin",
-    icon: <Monitor className="w-5 h-5" />,
+    label: "Hero",
+    href: "/admin/hero",
+    icon: <Image className="w-5 h-5" />,
   },
   {
     label: "Category Navbar",
     href: "/admin/navbar-category",
     icon: <Monitor className="w-5 h-5" />,
-  },
-  {
-    label: "Hero",
-    href: "/admin/hero",
-    icon: <Image className="w-5 h-5" />,
   },
   {
     label: "Category",
