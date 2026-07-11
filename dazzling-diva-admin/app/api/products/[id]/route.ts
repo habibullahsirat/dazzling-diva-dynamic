@@ -8,6 +8,35 @@ type Params = {
   }>;
 };
 
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  try {
+    await connectToDB();
+
+    const { id } = await params;
+
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return NextResponse.json(
+        { message: "Product not found." },
+        { status: 404 },
+      );
+    }
+
+    return NextResponse.json(product);
+  } catch (error) {
+    console.error(error);
+
+    return NextResponse.json(
+      { message: "Failed to fetch product." },
+      { status: 500 },
+    );
+  }
+}
+
 export async function PATCH(request: Request, { params }: Params) {
   try {
     await connectToDB();
