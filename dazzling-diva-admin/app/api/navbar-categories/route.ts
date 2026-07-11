@@ -11,7 +11,10 @@ export async function GET() {
       createdAt: -1,
     });
 
-    return NextResponse.json(categories);
+    const response = NextResponse.json(categories);
+
+    response.headers.set("Access-Control-Allow-Origin", "*");
+    return response;
   } catch (error) {
     console.error(error);
 
