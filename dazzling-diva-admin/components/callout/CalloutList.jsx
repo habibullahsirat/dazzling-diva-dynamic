@@ -41,7 +41,7 @@ export default function CalloutList({ callouts, fetchCallouts, onEdit }) {
       {callouts.map((callout) => (
         <div
           key={callout._id}
-          className="overflow-hidden rounded-lg border bg-white shadow"
+          className="border-gray-300 overflow-hidden rounded-lg border bg-white shadow"
         >
           <div className="relative h-100">
             <Image

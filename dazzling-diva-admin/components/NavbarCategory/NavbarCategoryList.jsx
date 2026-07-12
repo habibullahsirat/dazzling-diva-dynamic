@@ -46,7 +46,7 @@ export default function NavbarCategoryList({
       {categories.map((category) => (
         <div
           key={category._id}
-          className="rounded-lg border bg-white p-5 shadow"
+          className="border-gray-300 rounded-lg border bg-white p-5 shadow"
         >
           <div className="space-y-3">
             <div>

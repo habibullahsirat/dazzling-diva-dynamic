@@ -93,7 +93,10 @@ export default function DetailedCalloutList({
 
           <div className="grid gap-5 p-5 md:grid-cols-2">
             {section.items.map((item, index) => (
-              <div key={index} className="overflow-hidden rounded-lg border">
+              <div
+                key={index}
+                className="border-gray-300 overflow-hidden rounded-lg border"
+              >
                 <div className="relative h-100">
                   <Image
                     src={item.image}
