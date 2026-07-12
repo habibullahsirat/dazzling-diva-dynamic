@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Premium Clothing Website",
+  title: "Dazzling Diva | Premium Clothing Website",
   description:
     "Leading clothing company with quality products, efficient delivery, and global network.",
   generator: "habibullah.sirat.001@gmail.com",

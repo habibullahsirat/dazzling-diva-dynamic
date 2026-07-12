@@ -41,7 +41,7 @@ export default function ProductList({ products, fetchProducts, onEdit }) {
       {products.map((product) => (
         <div
           key={product._id}
-          className="overflow-hidden rounded-lg border bg-white shadow"
+          className="border-gray-300 overflow-hidden rounded-lg border bg-white shadow"
         >
           <div className="relative h-100">
             <Image

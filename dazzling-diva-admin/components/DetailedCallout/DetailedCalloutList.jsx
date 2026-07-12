@@ -47,11 +47,11 @@ export default function DetailedCalloutList({
       {sections.map((section) => (
         <div
           key={section._id}
-          className="overflow-hidden rounded-lg border bg-white shadow"
+          className="border-gray-300 overflow-hidden rounded-lg border bg-white shadow"
         >
           {/* Featured Banner */}
 
-          <div className="border-b p-5">
+          <div className="border-b border-gray-300 p-5">
             <h2 className="mb-4 text-xl font-bold">Featured Banner</h2>
 
             <div className="grid gap-5 md:grid-cols-2">
@@ -132,7 +132,7 @@ export default function DetailedCalloutList({
 
           {/* Actions */}
 
-          <div className="flex justify-end gap-3 border-t p-4">
+          <div className="flex justify-end gap-3 border-gray-300 border-t p-4">
             <button
               onClick={() => onEdit(section)}
               className="rounded bg-blue-600 p-2 text-white hover:bg-blue-700"

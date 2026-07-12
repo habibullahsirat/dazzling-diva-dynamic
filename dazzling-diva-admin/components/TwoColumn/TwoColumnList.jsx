@@ -33,7 +33,10 @@ export default function TwoColumnList({ items, fetchItems, onEdit }) {
   return (
     <div className="space-y-6">
       {items.map((item) => (
-        <div key={item._id} className="rounded-lg border bg-white p-5 shadow">
+        <div
+          key={item._id}
+          className="border-gray-300 rounded-lg border bg-white p-5 shadow"
+        >
           <div className="grid gap-6 md:grid-cols-2">
             {/* LEFT */}
 
