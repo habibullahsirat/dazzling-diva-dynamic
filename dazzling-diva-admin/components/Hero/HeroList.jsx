@@ -39,7 +39,7 @@ export default function HeroList({ heroes, fetchHeroes, onEdit }) {
       {heroes.map((hero) => (
         <div
           key={hero._id}
-          className="overflow-hidden rounded-lg border bg-white shadow"
+          className="overflow-hidden border-gray-300 rounded-lg border bg-white shadow"
         >
           <div className="relative h-56">
             <Image
