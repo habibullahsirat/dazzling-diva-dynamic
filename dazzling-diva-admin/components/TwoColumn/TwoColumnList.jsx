@@ -38,12 +38,12 @@ export default function TwoColumnList({ items, fetchItems, onEdit }) {
             {/* LEFT */}
 
             <div>
-              <div className="relative h-60">
+              <div className="relative h-100">
                 <Image
                   src={item.left.image}
                   alt=""
                   fill
-                  className="rounded object-cover"
+                  className="rounded object-cover object-top"
                 />
               </div>
 
@@ -57,12 +57,12 @@ export default function TwoColumnList({ items, fetchItems, onEdit }) {
             {/* RIGHT */}
 
             <div>
-              <div className="relative h-60">
+              <div className="relative h-100">
                 <Image
                   src={item.right.image}
                   alt=""
                   fill
-                  className="rounded object-cover"
+                  className="rounded object-cover object-top"
                 />
               </div>
 

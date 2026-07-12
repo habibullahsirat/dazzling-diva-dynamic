@@ -46,7 +46,7 @@ export default function HeroList({ heroes, fetchHeroes, onEdit }) {
               src={hero.image}
               alt={hero.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
 

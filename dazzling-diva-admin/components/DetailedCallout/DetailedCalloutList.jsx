@@ -55,13 +55,13 @@ export default function DetailedCalloutList({
             <h2 className="mb-4 text-xl font-bold">Featured Banner</h2>
 
             <div className="grid gap-5 md:grid-cols-2">
-              <div className="relative h-64">
+              <div className="relative h-150">
                 <Image
                   src={section.featured.image}
                   alt={section.featured.title}
                   fill
                   sizes="100vw"
-                  className="rounded object-cover"
+                  className="rounded object-cover object-top"
                 />
               </div>
 
@@ -94,13 +94,13 @@ export default function DetailedCalloutList({
           <div className="grid gap-5 p-5 md:grid-cols-2">
             {section.items.map((item, index) => (
               <div key={index} className="overflow-hidden rounded-lg border">
-                <div className="relative h-56">
+                <div className="relative h-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="100vw"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
 
