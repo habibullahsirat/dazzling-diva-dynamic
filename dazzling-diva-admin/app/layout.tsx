@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://yourcompany.com",
-    title: "Premium Clothing Website",
+    title: "Dazzling Diva",
     description:
       "Leading clothing company with quality products, efficient delivery, and global network.",
     siteName: "Dazzling Diva",
