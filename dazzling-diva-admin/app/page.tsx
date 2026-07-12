@@ -51,8 +51,10 @@ export default function LoginPage() {
         <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <div className="w-14 h-14 bg-linear-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">D</span>
+            <div className="w-full h-14 bg-linear-to-br rounded-xl flex items-center justify-center">
+              <span className="text-[#5A0C3D] font-bold text-2xl">
+                Dazzling Diva
+              </span>
             </div>
           </div>
 
