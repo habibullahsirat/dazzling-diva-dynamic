@@ -122,7 +122,7 @@ export default function LoginPage() {
               </label>
               <a
                 href="#"
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-[#5A0C3D] hover:text-[#5A0C3D] font-medium"
               >
                 Forgot password?
               </a>
@@ -132,7 +132,8 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              // className="w-full bg-linear-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-[#4A0932] via-[#5A0C3D] to-[#8A0B5B] text-white font-semibold py-3 rounded-lg hover:from-[#3D0729] hover:to-[#70094A] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading ? (
                 <>
