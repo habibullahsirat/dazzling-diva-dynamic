@@ -47,6 +47,11 @@ export default function NewArrivalList({ products, fetchProducts, onEdit }) {
               sizes="300px"
               className="object-cover object-top"
             />
+            {product.image?.includes("cloudinary") && (
+              <div className="absolute top-2 right-2 bg-gradient-to-r from-[#4A0932] via-[#5A0C3D] to-[#8A0B5B] text-white text-xs px-2 py-1 rounded-full">
+                Cloudinary
+              </div>
+            )}
           </div>
 
           <div className="space-y-3 p-4">
