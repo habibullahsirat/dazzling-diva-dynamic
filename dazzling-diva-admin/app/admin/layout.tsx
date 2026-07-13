@@ -42,7 +42,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       <div className="flex items-center justify-center h-screen bg-gray-50">
         <div className="text-center">
           <svg
-            className="w-12 h-12 animate-spin text-blue-600 mx-auto"
+            className="w-12 h-12 animate-spin text-[#8A0B5B] mx-auto"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
