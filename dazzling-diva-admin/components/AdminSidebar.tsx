@@ -234,11 +234,11 @@ export default function AdminSidebar() {
               href={item.href}
               className={`flex items-center gap-3 rounded-lg px-4 py-3 transition-colors font-medium ${
                 isActive
-                  ? "bg-blue-50 text-blue-700"
+                  ? "bg-blue-50 text-[#8A0B5B]"
                   : "text-gray-700 hover:bg-gray-50"
               }`}
             >
-              <span className={isActive ? "text-blue-600" : "text-gray-600"}>
+              <span className={isActive ? "text-[#8A0B5B]" : "text-gray-600"}>
                 {item.icon}
               </span>
 

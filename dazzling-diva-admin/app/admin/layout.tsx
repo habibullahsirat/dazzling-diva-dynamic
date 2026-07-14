@@ -42,7 +42,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
       <div className="flex items-center justify-center h-screen bg-gray-50">
         <div className="text-center">
           <svg
-            className="w-12 h-12 animate-spin text-blue-600 mx-auto"
+            className="w-12 h-12 animate-spin text-[#8A0B5B] mx-auto"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -85,9 +85,6 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                   placeholder="Search or type command..."
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                 />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
-                  ⌘ K
-                </span>
               </div>
             </div>
           </div>
@@ -103,14 +100,14 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
             {/* User Profile */}
             <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
-              <div className="w-9 h-9 bg-linear-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-sm">
+              <div className="w-9 h-9 bg-linear-to-br from-[#4A0932] to-[#8A0B5B] rounded-full flex items-center justify-center text-white font-semibold text-sm">
                 {userEmail.charAt(0).toUpperCase()}
               </div>
               <div className="hidden sm:block">
                 <p className="text-sm font-semibold text-gray-900 truncate max-w-xs">
                   {userEmail}
                 </p>
-                <p className="text-xs text-gray-600">Admin Account</p>
+                <p className="text-xs text-gray-600">Admin</p>
               </div>
             </div>
           </div>

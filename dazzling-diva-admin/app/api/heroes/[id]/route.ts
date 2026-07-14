@@ -19,7 +19,7 @@ export async function PATCH(
 
     if (!updated) {
       return NextResponse.json(
-        { message: "Project data not found" },
+        { message: "Hero data not found" },
         { status: 404 },
       );
     }
