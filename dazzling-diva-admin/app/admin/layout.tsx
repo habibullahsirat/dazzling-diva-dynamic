@@ -85,9 +85,6 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                   placeholder="Search or type command..."
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                 />
-                <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">
-                  ⌘ K
-                </span>
               </div>
             </div>
           </div>
