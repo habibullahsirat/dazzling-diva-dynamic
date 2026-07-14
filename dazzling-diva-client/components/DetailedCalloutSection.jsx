@@ -51,6 +51,7 @@
 // }
 
 import Image from "next/image";
+import Link from "next/link";
 
 async function getDetailedCallout() {
   const res = await fetch(
@@ -101,9 +102,11 @@ export default async function DetailedCalloutSection() {
             </h3>
           </div>
 
-          <button className="rounded-full bg-white px-5 py-3 text-[16px] font-semibold text-[#5A0C3D] sm:text-[18px]">
-            {data.featured.cta.text}
-          </button>
+          <Link href="/products">
+            <button className="rounded-full bg-white px-5 py-3 text-[16px] font-semibold text-[#5A0C3D] sm:text-[18px]">
+              {data.featured.cta.text}
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -136,9 +139,11 @@ export default async function DetailedCalloutSection() {
                 </p>
               </div>
 
-              <button className="rounded-full bg-white px-4 py-2.5 text-[13px] font-semibold text-[#5A0C3D] sm:text-[14px]">
-                {item.cta.text}
-              </button>
+              <Link href="/products">
+                <button className="rounded-full bg-white px-4 py-2.5 text-[13px] font-semibold text-[#5A0C3D] sm:text-[14px]">
+                  {item.cta.text}
+                </button>
+              </Link>
             </div>
           </div>
         ))}
