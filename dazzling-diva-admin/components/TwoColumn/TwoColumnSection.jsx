@@ -51,13 +51,15 @@ export default function TwoColumnSection() {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Two Column ({items.length})</h1>
 
-        <button
-          onClick={openAddModal}
-          // className="rounded bg-blue-600 px-5 py-2 text-white"
-          className="bg-gradient-to-r from-[#4A0932] via-[#5A0C3D] to-[#8A0B5B] text-white font-semibold px-5 py-2 rounded-lg hover:from-[#3D0729] hover:to-[#70094A] transition-all duration-300"
-        >
-          Add Two Column
-        </button>
+        {items.length === 0 && (
+          <button
+            onClick={openAddModal}
+            // className="rounded bg-blue-600 px-5 py-2 text-white hover:bg-blue-700"
+            className="bg-gradient-to-r from-[#4A0932] via-[#5A0C3D] to-[#8A0B5B] text-white font-semibold px-5 py-2 rounded-lg hover:from-[#3D0729] hover:to-[#70094A] transition-all duration-300"
+          >
+            Add Two Column
+          </button>
+        )}
       </div>
 
       {loading ? (
