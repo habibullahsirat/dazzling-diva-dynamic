@@ -19,19 +19,6 @@ const productSchema = new Schema(
       min: 0,
     },
 
-    // category: {
-    //   name: {
-    //     type: String,
-    //     required: true,
-    //     trim: true,
-    //   },
-    //   href: {
-    //     type: String,
-    //     required: true,
-    //     trim: true,
-    //   },
-    // },
-
     category: {
       name: {
         type: String,

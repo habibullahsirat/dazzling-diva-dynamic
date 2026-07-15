@@ -2,16 +2,6 @@ import mongoose, { Schema } from "mongoose";
 
 const navbarCategorySchema = new Schema(
   {
-    // name: {
-    //   type: String,
-    //   required: true,
-    // },
-
-    // href: {
-    //   type: String,
-    //   required: true,
-    // },
-
     name: {
       type: String,
       required: true,

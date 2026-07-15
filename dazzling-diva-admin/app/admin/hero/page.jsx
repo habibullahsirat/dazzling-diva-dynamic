@@ -5,8 +5,6 @@ import HeroSection from "@/components/Hero/HeroSection";
 export default function Hero() {
   return (
     <>
-      {/* <HeroList />
-      <HeroForm /> */}
       <HeroSection />
     </>
   );
