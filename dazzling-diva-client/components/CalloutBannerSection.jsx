@@ -3,9 +3,12 @@ import Link from "next/link";
 
 async function getCallout() {
   try {
-    const res = await fetch("http://localhost:3000/api/callout", {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_ADMIN_API}/api/callout`,
+      {
+        cache: "no-store",
+      },
+    );
 
     if (!res.ok) {
       return null;

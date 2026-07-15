@@ -11,7 +11,14 @@ export async function GET() {
       createdAt: -1,
     });
 
-    return NextResponse.json(products);
+    const response = NextResponse.json(products);
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://dazzling-diva-client.vercel.app",
+    );
+
+    // return NextResponse.json(products);
+    return response;
   } catch (error) {
     console.error(error);
 

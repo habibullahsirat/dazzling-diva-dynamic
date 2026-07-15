@@ -9,8 +9,14 @@ export async function GET() {
     const collections = await FeaturedCollection.find().sort({
       createdAt: -1,
     });
+    const response = NextResponse.json(collections);
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://dazzling-diva-client.vercel.app",
+    );
 
-    return NextResponse.json(collections);
+    // return NextResponse.json(collections);
+    return response;
   } catch (error) {
     console.error("Error fetching collections:", error);
 

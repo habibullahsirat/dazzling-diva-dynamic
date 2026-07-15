@@ -7,8 +7,14 @@ export async function GET() {
     await connectToDB();
 
     const flashDeals = await FlashDeal.find().sort({ createdAt: -1 });
+    const response = NextResponse.json(flashDeals);
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://dazzling-diva-client.vercel.app",
+    );
 
-    return NextResponse.json(flashDeals);
+    // return NextResponse.json(flashDeals);
+    return response;
   } catch (error) {
     console.error("Error fetching flash deals:", error);
 

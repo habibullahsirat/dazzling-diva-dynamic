@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { CATEGORIES } from "../data";
 
-const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API || "http://localhost:3000";
+// const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API || "http://localhost:3000";
+const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API;
 
 export default function BottomUtilityBar() {
   const [categories, setCategories] = useState([]);

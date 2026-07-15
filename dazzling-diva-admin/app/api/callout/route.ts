@@ -7,8 +7,14 @@ export async function GET() {
     await connectToDB();
 
     const callouts = await Callout.find().sort({ createdAt: -1 });
+    const response = NextResponse.json(callouts);
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://dazzling-diva-client.vercel.app",
+    );
 
-    return NextResponse.json(callouts);
+    // return NextResponse.json(callouts);
+    return response;
   } catch (error) {
     console.error("Error fetching callouts:", error);
 

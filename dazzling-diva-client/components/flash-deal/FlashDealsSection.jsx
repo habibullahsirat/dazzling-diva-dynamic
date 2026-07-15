@@ -1,9 +1,16 @@
 import FlashDealsClient from "./FlashDealsClient";
 
+// async function getFlashDeal() {
+//   const res = await fetch("http://localhost:3000/api/flash-deals", {
+//     cache: "no-store",
+//   });
 async function getFlashDeal() {
-  const res = await fetch("http://localhost:3000/api/flash-deals", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_ADMIN_API}/api/flash-deals`,
+    {
+      cache: "no-store",
+    },
+  );
 
   if (!res.ok) return null;
 

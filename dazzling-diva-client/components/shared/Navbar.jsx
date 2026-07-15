@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import { ShoppingBag, User, MapPin, Tag, ArrowRight, X } from "lucide-react";
 import Image from "next/image";
 
-const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API || "http://localhost:3000";
+// const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API || "http://localhost:3000";
+const ADMIN_API = process.env.NEXT_PUBLIC_ADMIN_API;
 
 export default function Navbar() {
   const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);

@@ -6,10 +6,14 @@ export async function GET() {
   await connectToDB();
   const project = await HeroSection.find();
   const response = NextResponse.json(project);
-  response.headers.set("Access-Control-Allow-Origin", "*");
+  // response.headers.set("Access-Control-Allow-Origin", "*");
   // response.headers.set("Access-Control-Allow-Origin", "http://localhost:3001");
   // response.headers.set("Access-Control-Allow-Methods", "GET");
   // response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  response.headers.set(
+    "Access-Control-Allow-Origin",
+    "https://dazzling-diva-client.vercel.app",
+  );
   return response;
 }
 
