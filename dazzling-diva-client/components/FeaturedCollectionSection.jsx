@@ -1,36 +1,3 @@
-// import { ShoppingBag } from "lucide-react";
-// import { FEATURED_COLLECTION } from "./data";
-
-// export default function FeaturedCollectionSection() {
-//   return (
-//     <section className="flex flex-col items-center gap-8 px-4 py-12 sm:px-8 md:gap-12 md:px-16">
-//       <div className="flex max-w-[912px] flex-col items-center gap-2 text-center">
-//         <p className="text-[16px] capitalize sm:text-[18px]">Curated</p>
-//         <h2 className="text-[30px] font-normal uppercase leading-tight sm:text-[40px] md:text-[48px] md:leading-[60px]">
-//           Featured Collection
-//         </h2>
-//       </div>
-
-//       <div className="grid w-full max-w-[1312px] grid-cols-1 gap-3 sm:grid-cols-3">
-//         {FEATURED_COLLECTION.map((item, i) => (
-//           <div
-//             key={i}
-//             className="relative h-[420px] bg-cover bg-center sm:h-[560px] md:h-[650px]"
-//             style={{ backgroundImage: `url(${item.img})` }}
-//           >
-//             <button
-//               aria-label="Add to cart"
-//               className="absolute bottom-6 left-1/2 flex h-16 w-16 -translate-x-1/2 items-center justify-center rounded-full border-2 border-black/20 bg-white sm:h-20 sm:w-20"
-//             >
-//               <ShoppingBag className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={1.6} />
-//             </button>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
 import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 

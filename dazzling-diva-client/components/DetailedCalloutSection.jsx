@@ -1,57 +1,4 @@
-// import { DETAIL_CALLOUTS } from "./data";
-
-// export default function DetailedCalloutSection() {
-//   return (
-//     <section className="flex w-full flex-col bg-white lg:flex-row">
-//       <div
-//         className="flex min-h-[420px] flex-1 items-end bg-cover bg-center p-8 sm:min-h-[520px] md:p-12"
-//         style={{
-//           backgroundImage:
-//             "linear-gradient(180deg, rgba(0,0,0,0) 50%, #000000 100%), url(/images/fs4_4_2.jpg)",
-//         }}
-//       >
-//         <div className="flex flex-col items-start gap-6">
-//           <div className="flex flex-col gap-3">
-//             <p className="text-[13px] uppercase text-white sm:text-[14px]">Edit</p>
-//             <h3 className="max-w-[520px] text-[30px] font-semibold capitalize leading-[1.2] tracking-[-0.03em] text-white sm:text-[44px]">
-//               Handpicked For You
-//             </h3>
-//           </div>
-//           <button className="rounded-full bg-white px-5 py-3 text-[16px] font-semibold capitalize text-[#5A0C3D] sm:text-[18px]">
-//             Discover
-//           </button>
-//         </div>
-//       </div>
-
-//       <div className="grid flex-1 grid-cols-1 sm:grid-cols-2">
-//         {DETAIL_CALLOUTS.map((c) => (
-//           <div
-//             key={c.text}
-//             className="flex min-h-[260px] items-end bg-cover bg-center p-6 sm:min-h-[260px]"
-//             style={{
-//               backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0) 50%, #000000 100%), url(${c.img})`,
-//             }}
-//           >
-//             <div className="flex flex-col items-start gap-3">
-//               <div className="flex flex-col gap-1.5">
-//                 <p className="text-[11px] uppercase text-white sm:text-[12px]">{c.title}</p>
-//                 <p className="max-w-[280px] text-[20px] font-semibold capitalize leading-[1.2] tracking-[-0.03em] text-white sm:text-[28px]">
-//                   {c.text}
-//                 </p>
-//               </div>
-//               <button className="rounded-full bg-white px-4 py-2.5 text-[13px] font-semibold capitalize text-[#5A0C3D] sm:text-[14px]">
-//                 Discover
-//               </button>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
 import Image from "next/image";
-import Link from "next/link";
 
 async function getDetailedCallout() {
   const res = await fetch(
@@ -102,11 +49,9 @@ export default async function DetailedCalloutSection() {
             </h3>
           </div>
 
-          <Link href="/products">
-            <button className="rounded-full bg-white px-5 py-3 text-[16px] font-semibold text-[#5A0C3D] sm:text-[18px]">
-              {data.featured.cta.text}
-            </button>
-          </Link>
+          <button className="rounded-full bg-white px-5 py-3 text-[16px] font-semibold text-[#5A0C3D] sm:text-[18px]">
+            {data.featured.cta.text}
+          </button>
         </div>
       </div>
 
@@ -139,11 +84,9 @@ export default async function DetailedCalloutSection() {
                 </p>
               </div>
 
-              <Link href="/products">
-                <button className="rounded-full bg-white px-4 py-2.5 text-[13px] font-semibold text-[#5A0C3D] sm:text-[14px]">
-                  {item.cta.text}
-                </button>
-              </Link>
+              <button className="rounded-full bg-white px-4 py-2.5 text-[13px] font-semibold text-[#5A0C3D] sm:text-[14px]">
+                {item.cta.text}
+              </button>
             </div>
           </div>
         ))}

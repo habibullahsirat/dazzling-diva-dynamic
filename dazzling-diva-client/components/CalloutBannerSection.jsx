@@ -1,28 +1,3 @@
-// export default function CalloutBannerSection() {
-//   return (
-//     <section
-//       className="flex w-full items-end justify-center bg-cover bg-center px-4 py-10 sm:px-12 md:px-16"
-//       style={{
-//         backgroundImage:
-//           "linear-gradient(180deg, rgba(90,12,61,0) 50.1%, #5A0C3D 100%), url(/images/fs8_hero.jpg)",
-//         minHeight: "420px",
-//       }}
-//     >
-//       <div className="flex max-w-[1030px] flex-col items-center gap-6 text-center">
-//         <div className="flex flex-col items-center gap-3">
-//           <p className="text-[13px] uppercase text-white sm:text-[14px]">Pro Shop</p>
-//           <h3 className="text-[26px] font-semibold capitalize leading-[1.2] tracking-[-0.03em] text-white sm:text-[44px]">
-//             Effortless Style, Delivered To Your Door
-//           </h3>
-//         </div>
-//         <button className="rounded-full bg-white px-6 py-3 text-[16px] font-semibold capitalize text-[#5A0C3D] sm:text-[18px]">
-//           Discover
-//         </button>
-//       </div>
-//     </section>
-//   );
-// }
-
 import Image from "next/image";
 import Link from "next/link";
 

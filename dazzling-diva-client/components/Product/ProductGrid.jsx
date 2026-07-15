@@ -20,12 +20,6 @@ export default function ProductGrid({ title, subtitle, products }) {
           No products found.
         </p>
       ) : (
-        // <div className="grid w-full max-w-[1400px] grid-cols-4 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        //   <div className="flex w-full max-w-[1312px] flex-wrap justify-center gap-3">
-        //     {products.map((product) => (
-        //       <ProductCard key={product._id} product={product} />
-        //     ))}
-        //   </div>
         <div className="grid w-full max-w-[1400px] grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product._id} product={product} />
